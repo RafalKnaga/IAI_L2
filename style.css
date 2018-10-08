@@ -1,15 +1,19 @@
-body { background-color:red };
+body { background-color:red ;
+     text-align:center;
+}
 
 #header
 {
-    float:left;
+
     background-color: black;
     color: white ;
     weight: 100%;
+    height: 40px;
+    padding-top:10px;
+
 }
 
 ul li {
-
 
     display: inline;
 }
