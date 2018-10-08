@@ -1,1 +1,15 @@
 body { background-color:red };
+
+#header
+{
+    float:left;
+    background-color: black;
+    color: white ;
+    weight: 100%;
+}
+
+ul li {
+
+
+    display: inline;
+}
