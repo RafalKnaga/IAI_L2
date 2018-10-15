@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="Stylesheet" type="text/css" href="style.css" />
+    <title>Kontakt</title>
+</head>
+<body>
+<div class=" container fluid col-md-9">
+<form>
+    <fieldset>
+        <legend>Uzupełnij dane:</legend>
+
+        <div class="form-group">
+            <label for="name">Imię:</label>
+            <input id="name" name="name" placeholder="Podaj imię:" required />
+        </div>
+
+        <div class="form-group">
+            <label for="surname">Nazwisko:</label>
+            <input id="surname" name="surname" placeholder="Podaj nazwisko:" required />
+        </div>
+
+        <div class="form-group">
+            <label for="email">E-mail:</label>
+            <input id="email" type="email" name="email" placeholder="Podaj email:" required />
+        </div>
+            <br>
+            <label>Płeć:</label>
+            <br>
+
+            <div class="form-group">
+            <input type="radio"
+                   name="sex"
+                   id="man"
+                   value="man"
+                   checked required />
+            <label for="man">Mężczyzna</label>
+
+            <input type="radio"
+                   name="sex"
+                   id="woman"
+                   value="women" required />
+            <label for="woman">Kobieta</label>
+                </div>
+
+            <div class="form-group">
+                <label for="text">Opis:</label>
+                <textarea class="form-control" id="text" rows="3"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="age">Wiek:</label>
+                <input id="age" type="number" name="email" placeholder="Podaj wiek:" required />
+            </div>
+
+            <div class="form-group">
+                <label for="status">Stan cywilny:</label>
+                <select class="form-control" id="status">
+                    <option>Panna</option>
+                    <option>Kawaler</option>
+                    <option>Mężatka</option>
+                    <option>Żonaty</option>
+                </select>
+            </div>
+
+            <button type="submit" class="sumbit">Wyślij</button>
+            <button type="reset" class="reset">Wyczyść</button>
+
+</form>
+    </fieldset>
+</div>
+</body>
+</html>
