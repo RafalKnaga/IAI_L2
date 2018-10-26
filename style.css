@@ -1,5 +1,6 @@
-body { background-color:#adde6e ;
-
+body { 
+	background-color: #adde6e ;
+	margin: 15px 15px 15px 15px;
 }
 
 a  {
@@ -8,31 +9,38 @@ a  {
     border-radius: 40px;
 }
 
-a:hover {
+div.lista ul li {
+	display:block;
+}
 
-    background-color: chartreuse ;
+a:hover {
+    background-color: blue ;
     background: aqua ;
     transition: all 1s;
 }
 
-#header
-{
-
+#header {
+	text-align:center;
     background-color: black;
     color: white ;
-    weight: 100%;
-    height: 40px;
-    padding-top:10px;
-
+    line-height: 50px;
+    border: 2px solid white;
+    border-radius: 12px;
+	padding-top:14px;
 }
 
 ul li {
-
     display: inline;
 }
 
 iframe{
-
+	margin-top:10px;
     width:100%
+}
 
+img {
+	margin-top:10px;
+	height: 240px;
+	border:10px solid #565353; 
+	border-radius:10px;
 }
