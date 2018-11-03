@@ -9,6 +9,8 @@
 </head>
 <body>
 
+<button class="myButton" title="Wróć do góry">Do Góry</button>
+
 <div id="header">
     <ul>
 
@@ -25,19 +27,21 @@
         <legend>Uzupełnij dane:</legend>
 
         <div class="form-group">
-            <label for="name">Imię:</label>
-            <input id="name" name="name" placeholder="Podaj imię:" required />
+            <label for="name">Imię:</label></br>
+            <input id="name" name="name"  type="text"  placeholder="Podaj imię:" required /> 
         </div>
 
         <div class="form-group">
-            <label for="surname">Nazwisko:</label>
-            <input id="surname" name="surname" placeholder="Podaj nazwisko:" required />
+            <label for="surname">Nazwisko:</label></br>
+            <input id="surname" name="surname" type="text" placeholder="Podaj nazwisko:" required />
         </div>
 
         <div class="form-group">
-            <label for="email">E-mail:</label>
+            <label for="email">E-mail:</label></br>
             <input id="email" type="email" name="email" placeholder="Podaj email:" required />
         </div>
+		
+		
             <br>
             <label>Płeć:</label>
             <br>
@@ -58,15 +62,15 @@
                 </div>
 
             <div class="form-group">
-                <label for="text">Opis:</label>
-                <textarea class="form-control" id="text" rows="3"></textarea>
+                <label for="text">Opis:</label></br>
+                <textarea class="form-control" id="text" name="text" rows="3" required></textarea>
             </div>
 
-            <div class="form-group">
-                <label for="age">Wiek:</label>
+            <div class="form-row">
+                <label for="age">Wiek:</label></br>
                 <input id="age" type="number" name="email" placeholder="Podaj wiek:" required />
             </div>
-
+</br>
             <div class="form-group">
                 <label for="status">Stan cywilny:</label>
                 <select class="form-control" id="status">
@@ -77,12 +81,15 @@
                 </select>
             </div>
 
-            <button type="submit" class="sumbit">Wyślij</button>
+            <button type="submit" class="send">Wyślij</button>
             <button type="reset" class="reset">Wyczyść</button>
 
 </form>
     </fieldset>
 </div>
+
+<script type="text/javascript" src="skrypt.js"></script>
+<script type="text/javascript" src="przycisk.js"></script>
 
 </body>
 </html>
