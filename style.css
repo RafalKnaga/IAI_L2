@@ -1,5 +1,5 @@
 body { 
-	background-color: #adde6e ;
+	background-color:#abb0b5 ;
 	margin: 15px 15px 15px 15px;
 }
 
@@ -48,8 +48,10 @@ img {
 .is-invalid {
             border:solid 1px red;
         }
+.is-valid{
+		border:solid 1px #57de75;
+}
 
-		
 		
 .myButton {
             display: none;
@@ -71,4 +73,15 @@ img {
             background-color: #555;
         }
 		
-		 
+.error {
+	
+	  color: red;
+	  display: block;
+}
+
+.good {
+	
+	color: #21ff54;
+	display: block;
+}
+		

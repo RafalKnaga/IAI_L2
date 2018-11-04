@@ -1,3 +1,17 @@
+ //Zadanie 1
+//console.log("Hello World!");
+
+//Zadanie 2
+//let array=[1,2,3,4,5,6,7,8,9,10];
+//for(let i=1; i<=10; i++){   
+//    for(let j=1; j<=10; j++){
+//        array.push(i*j);
+//   }
+//    console.log(array);
+//  }
+
+ // Zadanie 3 
+ 
  let send = document.querySelector(".send");
 
     send.addEventListener("click", checkForm);
@@ -14,48 +28,95 @@
 
     function checkForm() {
 		
-		let iname = document.querySelector("#name");
+		let iname    = document.querySelector("#name");
 		let isurname = document.querySelector("#surname");
-		let iemail = document.querySelector("#email");
-		let iage = document.querySelector("#age");
-		
-
+		let iage     = document.querySelector("#age");
+		let iemail   = document.querySelector("#email");
 
         let inameV     = iname.value;
-		let isurnameV = isurname.value;
+		let isurnameV  = isurname.value;
+		let iageV      = iage.value;
 		let iemailV    = iemail.value;
-		let iageV     = iage.value;
-		
 
     
 
 		
-        if (iageV === '' || !parseInt(iageV) || isNaN(iageV) || iageV < 1 || iageV > 100) {
-            addClass(iage, 'is-invalid');
-        } else {
-            removeClass(iage, 'is-invalid');
-        }
+        
 
-        if(inameV === '' || parseInt(inameV)) {
+    if(inameV === '')  {
             addClass(iname, 'is-invalid');
-        } else {
-            removeClass(iname, 'is-invalid');
+			 removeClass(iname, 'is-valid');
+			document.getElementById('aname').innerHTML= "To pole musi być wypełnione";
+			document.getElementById('bname').innerHTML= "";
         }
 		
-
-		if (isurnameV === '' || parseInt(isurnameV)){
-			addClass(isurname, 'is-invalid');
-		}else {
-			removeClass(isurname, 'is-invalid');
-		}
+	else if(parseInt(inameV)){
+            addClass(iname, 'is-invalid');
+			 removeClass(iname, 'is-valid');
+			document.getElementById('aname').innerHTML= "Wypełnij pole tylko literami";
+			document.getElementById('bname').innerHTML= "";
+        }
+	else{
+			 removeClass(iname, 'is-invalid');
+			  addClass(iname, 'is-valid');
+			document.getElementById('bname').innerHTML= "OK";
+			document.getElementById('aname').innerHTML= "";
 			
-			
-		if (iemailV === '' || parseInt(iemailV)){
-			addClass(iemail, 'is-invalid');
-		}else {
-			removeClass(iemail, 'is-invalid');
-		}
-			
-	
+        }
 		
-    }
+		
+    if(isurnameV === '')  {
+            addClass(isurname, 'is-invalid');
+			 removeClass(isurname, 'is-valid');
+			document.getElementById('asurname').innerHTML= "To pole musi być wypełnione";
+			document.getElementById('bsurname').innerHTML= "";
+        }
+		
+	else if(parseInt(isurnameV)){
+            addClass(isurname, 'is-invalid');
+			 removeClass(isurname, 'is-valid');
+			document.getElementById('asurname').innerHTML= "Wypełnij pole tylko literami";
+			document.getElementById('bsurname').innerHTML= "";
+        }
+	else{
+			 removeClass(isurname, 'is-invalid');
+			  addClass(isurname, 'is-valid');
+			document.getElementById('bsurname').innerHTML= "OK";
+			document.getElementById('asurname').innerHTML= "";
+			
+        }
+		
+		
+		
+	if(iageV === '')  {
+            addClass(iage, 'is-invalid');
+			 removeClass(iage, 'is-valid');
+			document.getElementById('aage').innerHTML= "To pole musi być wypełnione";
+			document.getElementById('bage').innerHTML= "";
+        }
+		
+		
+	else if (!parseInt(iageV) || isNaN(iageV) || iageV < 1 || iageV > 100) {
+            addClass(iage, 'is-invalid');
+			document.getElementById('aage').innerHTML= "ZLE";
+			 addClass(iage, 'is-invalid');
+			 removeClass(iage, 'is-valid');
+			document.getElementById('aage').innerHTML= "Podaj tylko liczby, zakres 1-100";
+			document.getElementById('bage').innerHTML= "";	
+        } 
+	else {
+            removeClass(iage, 'is-invalid');
+			addClass(iage, 'is-valid');
+			document.getElementById('bage').innerHTML= "OK";
+			document.getElementById('aage').innerHTML= "";	
+        }
+		
+    
+	
+	  
+	}
+			
+			
+			
+			
+			
