@@ -171,16 +171,85 @@ let preQuestions =
             ]
         }];
 
+let start = document.querySelector('.start');
+let history = document.querySelector('.history');	
+
+let display_buttons= document.querySelector('.display_buttons');
+let display_quiz = document.querySelector('.display_quiz');
+
+		
+let nowa_gra = document.querySelector('.nowa_gra');	 
 let next = document.querySelector('.next');
 let back = document.querySelector('.back')
 
 let question = document.querySelector('.question');
 let answers = document.querySelectorAll('.list-group-item');
+let wynik = document.querySelector(".wynik");
+
+let games = 0;
 let index = 0;
 let points =0;
+let all_points = 0;
+
+function add_class(element, class_name){
+    element.classList.add(class_name);
+}
+
+function remove_class(element, class_name){
+    element.classList.remove(class_name);
+}
+
+start.addEventListener('click', function() {
+    games++;
+
+    remove_class(nowa_gra, 'display_on');
+    add_class(display_quiz, 'display_on');
+
+    remove_class(display_buttons, 'display_on');
+    add_class(display_buttons, 'display_off');
+});
+
+history.addEventListener('click', function() {
+    document.getElementById('history_score').innerHTML="Rozwiązałeś quiz " +games+ " razy." + "<br>" + 
+    "Liczba punktów  z wszystkich gier: " +all_points+ "<br>"+
+    "Średni wynik z rozwiązywania quizu: " +all_points/games;
+});
 
 
-for(let i=0; i< answers.length )
+nowa_gra.addEventListener('click', function() {
+    index = 0;
+    setQuestion(index);
+
+    document.getElementById('history_score').innerHTML="";
+    next.innerHTML="Dalej";
+    
+    remove_class(wynik, 'display_on');
+    add_class(wynik, 'display_off');
+
+    remove_class(display_quiz, 'display_on');
+    add_class(display_buttons, 'display_on');
+
+    remove_class(back, 'disabled');
+    remove_class(next, 'disabled');
+
+    all_points+=points;
+    points=0;
+});
+
+for(let i=0; i<answers.length; i++){
+    answers[i].addEventListener('click', function (event) {
+        if(event.target.innerHTML === preQuestions[index].correct_answer) {
+            event.target.classList.add('is-valid');
+            add_all();
+            points++;    
+        }
+        else {
+            event.target.classList.add('is-invalid');
+            add_all();
+        }
+    });
+
+
 function setQuestion(index) {
     question.innerHTML = preQuestions[index].question;
 
@@ -192,12 +261,45 @@ function setQuestion(index) {
 
 setQuestion(index);
 
+function add_all(){
+	for(let i=0; i<answers.length; i++){
+		add_class(answers[i], 'disabled');
+	}
+}
+
+function remove_all() {
+    answers.forEach(function(element){
+        element.classList.remove('is-valid');
+        element.classList.remove('is-invalid');
+    });
+	
+	for( let i=0; i<answers.length; i++){
+		remove_class(answers[i], 'disabled');
+	}
+}
+
 next.addEventListener('click', function () {
+	if(index == 18){
+		next.innerHTML="Koniec";
+	}
+	else if(index == 19) {
+	    add_class(nowa_gra, 'display_on');
+        add_class(wynik, 'display_on');
+
+        add_class(back, 'disabled');
+        add_class(next, 'disabled');
+
+        wynik.innerHTML="Ilość uzyskanych punktów: " +points;
+    }
+		
     index++;
+	remove_all()
     setQuestion(index);
 });
 
+
 back.addEventListener('click', function () {
     index--;
+	remove_all();
     setQuestion(index);
 });

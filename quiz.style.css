@@ -1,3 +1,87 @@
+
 body {
     background-color: #abb0b5;
+	font:16px Arial;
+	margin: 10px 10px 10px 10px;
+}
+
+ul.header_list{
+	display: inline;
+	list-style-type: none;
+}
+
+#header {
+	padding-top:10px;
+	padding-bottom:10px;
+	text-align:center;
+    background-color: #000000;
+    color: #ffffff;
+	border:thick double #ffffff;
+	border-radius: 8px
+}
+
+a {
+	border-radius: 35px;
+	padding:10px;
+	background-color: white;
+}
+
+a:hover {
+	background-color:#767d84;
+	color:white;
+	transition: all 0.5s;
+}
+
+button {
+    margin-top:3px;
+    margin-bottom:5px;
+    height:50px;
+    width:100px;
+}
+
+.nowa_gra {
+    height: 50px;
+    width:206px;
+}
+
+.menu {
+    font-size: 45px;
+    text-align: center;
+}
+
+.center {
+    text-align:center;
+}
+
+.disabled{
+	pointer-events: none;
+}
+
+.list-group-item{
+    cursor: pointer;
+}
+
+.is-valid {
+    font-weight: bold;
+    color: red;
+	border: solid 2px #28a745;
+}
+
+.is-invalid {
+    font-weight: bold;
+	border: solid 2px #dc3545;
+}
+
+.wynik {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.display_off {
+    display: none;
+}
+
+.display_on {
+    display: block;
 }
